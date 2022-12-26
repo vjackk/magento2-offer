@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author    Vjackk <vincentjacquemin34@gmail.com>
+ * @copyright 2022 Vjackk
+ * @license   https://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ */
+-->
+<routes xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Webapi:etc/webapi.xsd">
+    <route method="GET" url="/V1/offers/:id">
+        <service class="Vjackk\Offer\Api\OfferRepositoryInterface" method="getById"/>
+        <resources>
+            <resource ref="Vjackk_Offer::offers"/>
+        </resources>
+    </route>
+    <route method="GET" url="/V1/offers">
+        <service class="Vjackk\Offer\Api\OfferRepositoryInterface" method="getList"/>
+        <resources>
+            <resource ref="Vjackk_Offer::offers"/>
+        </resources>
+    </route>
+    <route method="POST" url="/V1/offers">
+        <service class="Vjackk\Offer\Api\OfferRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="Vjackk_Offer::save"/>
+        </resources>
+    </route>
+    <route method="PUT" url="/V1/offers/:id">
+        <service class="Vjackk\Offer\Api\OfferRepositoryInterface" method="save"/>
+        <resources>
+            <resource ref="Vjackk_Offer::save"/>
+        </resources>
+    </route>
+    <route method="DELETE" url="/V1/offers/:id">
+        <service class="Vjackk\Offer\Api\OfferRepositoryInterface" method="deleteById"/>
+        <resources>
+            <resource ref="Vjackk_Offer::delete"/>
+        </resources>
+    </route>
+</routes>

@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author    Vjackk <vincentjacquemin34@gmail.com>
+ * @copyright 2022 Vjackk
+ * @license   https://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ */
+-->
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="vjackk_offer" engine="innodb" comment="Offer Table">
+        <column xsi:type="smallint" name="offer_id" unsigned="true" nullable="false" identity="true" comment="Entity ID"/>
+        <column xsi:type="varchar" name="label" nullable="false" comment="Label"/>
+        <column xsi:type="text" name="image_data" comment="Image path"/>
+        <column xsi:type="varchar" name="image_alt" comment="Image path alt"/>
+        <column xsi:type="varchar" name="redirect_link" comment="Redirect link"/>
+        <column xsi:type="date" name="start_date" comment="Start Date"/>
+        <column xsi:type="date" name="end_date" comment="End Date"/>
+        <column xsi:type="timestamp" name="created_at" on_update="false" nullable="false" default="CURRENT_TIMESTAMP" comment="Start Date"/>
+        <column xsi:type="timestamp" name="updated_at" on_update="true" nullable="false" default="CURRENT_TIMESTAMP" comment="End Date"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="offer_id"/>
+        </constraint>
+    </table>
+    <table name="vjackk_offer_category" engine="innodb" comment="Offer Category Join Table">
+        <column xsi:type="smallint" name="offer_id" unsigned="true" nullable="false" comment="Offer ID"/>
+        <column xsi:type="int" name="category_id" unsigned="true" nullable="false" comment="Category ID"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="offer_id"/>
+            <column name="category_id"/>
+        </constraint>
+        <constraint xsi:type="foreign" referenceId="VJACKK_OFFER_CATEGORY_OFFER_ID_VJACKK_OFFER_OFFER_ID" table="vjackk_offer_category" column="offer_id" referenceTable="vjackk_offer" referenceColumn="offer_id" onDelete="CASCADE"/>
+        <constraint xsi:type="foreign" referenceId="VJACKK_OFFER_CATEGORY_CATEGORY_ID_CATALOG_CATEGORY_ENTITY_ENTITY_ID" table="vjackk_offer_category" column="category_id" referenceTable="catalog_category_entity" referenceColumn="entity_id" onDelete="CASCADE"/>
+        <index referenceId="VJACKK_OFFER_CATEGORY_CATEGORY_ID" indexType="btree">
+            <column name="category_id"/>
+        </index>
+    </table>
+</schema>

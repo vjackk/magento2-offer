@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author    Vjackk <vincentjacquemin34@gmail.com>
+ * @copyright 2022 Vjackk
+ * @license   https://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+    <acl>
+        <resources>
+            <resource id="Magento_Backend::admin">
+                <resource id="Vjackk_Base::menu" title="Vjackk Menu" translate="title" >
+                    <resource id="Vjackk_Offer::offers" title="Offers" translate="title" sortOrder="10">
+                        <resource id="Vjackk_Offer::save" title="Save Offer" translate="title" sortOrder="10" />
+                        <resource id="Vjackk_Offer::delete" title="Delete Offer" translate="title" sortOrder="20" />
+                    </resource>
+                </resource>
+            </resource>
+        </resources>
+    </acl>
+</config>

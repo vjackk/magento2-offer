@@ -1,0 +1,39 @@
+<?php
+/**
+ * @author    Vjackk <vincentjacquemin34@gmail.com>
+ * @copyright 2022 Vjackk
+ * @license   https://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ */
+
+/** @var \Vjackk\Offer\Block\Offer\OfferList $block */
+$offers = $block->getOfferList();
+?>
+<div class="slick-slider" style="display: none">
+    <?php foreach ($offers as $offer): ?>
+        <?php $imageUrl = $block->getImageUrl($offer) ?>
+        <div class="item">
+            <div class="wrapper">
+                <?php if ($imageUrl): ?>
+                    <div class="offer-image">
+                        <img src="<?= $imageUrl ?>" alt="<?= $offer->getImageAlt() ?>" ?>
+                    </div>
+                <?php endif; ?>
+                <div class="offer-label">
+                    <?= $offer->getLabel() ?>
+                </div>
+                <div class="offer-more">
+                    <a href="<?= $offer->getRedirectLink() ?>" target="_blank">
+                        <button><?= __('More') ?></button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    <?php endforeach; ?>
+</div>
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "Vjackk_Offer/js/slider": {}
+        }
+    }
+</script>

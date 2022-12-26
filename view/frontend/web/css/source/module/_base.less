@@ -1,0 +1,76 @@
+//
+//  Base Styles and Magento styles override
+//  ____________________________________________
+
+.slick-slider {
+    margin-bottom: 20px;
+
+    .item {
+        .wrapper {
+            margin: auto;
+            padding: 5px 120px;
+            display: flex;
+            align-items: center;
+            border-top: solid 1px @button-border-color;
+            border-bottom: solid 1px @button-border-color;
+
+            @media (max-width: @breakpoint_laptop) {
+                display: block;
+                margin: auto;
+            }
+
+            .offer-image {
+                width: 17%;
+                min-width: 200px;
+                @media (max-width: @breakpoint_laptop) {
+                    display: none;
+                }
+            }
+
+            .offer-label {
+                width: 70%;
+                font-size: 2rem;
+                font-weight: bolder;
+                margin: auto 50px;
+                line-height: 30px;
+
+                @media (max-width: @breakpoint_laptop) {
+                    width: 100%;
+                    margin: auto;
+                }
+
+                @media (max-width: @breakpoint_tablet) {
+                    font-size: 1.5rem;
+                }
+            }
+
+            .offer-more {
+                width: 15%;
+
+                @media (max-width: @breakpoint_laptop) {
+                    width: 100%;
+                    margin: 10px auto;
+                }
+
+                a {
+                    text-align: center;
+
+                    @media (max-width: @breakpoint_laptop) {
+                        width: 40%;
+                        display:block;
+                        margin: auto;
+                    }
+
+                    @media (max-width: @breakpoint_tablet) {
+                        width: 80%;
+                    }
+
+                    button {
+                        border-color: @button-border-color;
+                        background-color: @button-background-color;
+                    }
+                }
+            }
+        }
+    }
+}

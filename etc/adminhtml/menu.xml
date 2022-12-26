@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * @author    Vjackk <vincentjacquemin34@gmail.com>
+ * @copyright 2022 Vjackk
+ * @license   https://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Vjackk_Base::menu" title="Vjackk" translate="title" module="Vjackk_Offer" sortOrder="60" resource="Vjackk_Base::menu"/>
+        <add id="Vjackk_Offer::offers" title="Offer" translate="title" module="Vjackk_Offer" sortOrder="10" parent="Vjackk_Base::menu" action="offer/offer/index" resource="Vjackk_Offer::offer"/>
+    </menu>
+</config>

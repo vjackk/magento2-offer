@@ -1,0 +1,33 @@
+{
+    "vjackk_offer": {
+        "column": {
+            "offer_id": true,
+            "label": true,
+            "image_path": true,
+            "image_alt": true,
+            "redirect_link": true,
+            "start_date": true,
+            "end_date": true,
+            "created_at": true,
+            "updated_at": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "vjackk_offer_category": {
+        "column": {
+            "offer_id": true,
+            "category_id": true
+        },
+        "index": {
+            "VJACKK_OFFER_CATEGORY_CATEGORY_ID": true
+        },
+        "constraint": {
+            "PRIMARY": true,
+            "VJACKK_OFFER_CATEGORY_OFFER_ID_VJACKK_OFFER_OFFER_ID": true,
+            "VJACKK_OFFER_CATEGORY_CATEGORY_ID_CATALOG_CATEGORY_ENTITY_ENTITY_ID": true
+        }
+    }
+}
+
