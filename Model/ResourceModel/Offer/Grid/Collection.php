@@ -46,7 +46,7 @@ class Collection extends OfferCollection implements SearchResultInterface
      * @param $eventObject
      * @param $resourceModel
      * @param $model
-     * @param $connection
+     * @param ?AdapterInterface $connection
      * @param AbstractDb|null $resource
      * @param TimezoneInterface|null $timeZone
      * @SuppressWarnings(PHPMD.ExcessiveParameterList)
@@ -62,7 +62,7 @@ class Collection extends OfferCollection implements SearchResultInterface
         $eventObject,
         $resourceModel,
         $model = Document::class,
-        $connection = null,
+        AdapterInterface $connection = null,
         AbstractDb $resource = null,
         TimezoneInterface $timeZone = null
     ) {
