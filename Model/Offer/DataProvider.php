@@ -53,9 +53,9 @@ class DataProvider extends ModifierPoolDataProvider
     private $offerFactory;
 
     /**
-     * @param $name
-     * @param $primaryFieldName
-     * @param $requestFieldName
+     * @param string $name
+     * @param string $primaryFieldName
+     * @param string $requestFieldName
      * @param CollectionFactory $offerCollectionFactory
      * @param DataPersistorInterface $dataPersistor
      * @param Json $json
